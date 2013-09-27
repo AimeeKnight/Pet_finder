@@ -1,0 +1,1 @@
+Sinatra app for finding adoptable pets based on your zip code.
