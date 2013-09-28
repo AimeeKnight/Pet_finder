@@ -2,9 +2,14 @@
 require 'rubygems'
 require 'json'
 require 'net/http'
+require 'yaml'
 
+zip = "31324"
 
-url = "http://api.petfinder.com/pet.find?key=2f8910923ead50b256537ffc4893787b&format=json&location=31324"
+CONFIG = YAML.load_file("config.yml")
+key = CONFIG['petsearch']['key']
+
+url = "http://api.petfinder.com/pet.find?key=" + key + "&format=json&location=" + zip
 
 resp = Net::HTTP.get_response(URI.parse(url))
 
