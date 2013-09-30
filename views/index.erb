@@ -16,7 +16,11 @@
       <p><span>Type: </span><%= num["animal"]["$t"] %></p>  
       <p><span>Sex: </span><%= num["sex"]["$t"] %></p>
       <p><span>Age: </span><%= num["age"]["$t"] %></p>
-      <p><span>Contact: </span><%= num["contact"]["phone"]["$t"] %></p>
+      <p><span>Size: </span><%= num["size"]["$t"] %></p>
+      <p><span>Address: </span><%= num["contact"]["address1"]["$t"] %>             <%= num["contact"]["address2"]["$t"] %>
+                      <%= num["contact"]["city"]["$t"] %>, 
+                      <%= num["contact"]["state"]["$t"] %></p>
+      <p><span>Phone: </span><%= num["contact"]["phone"]["$t"] %></p>
     </article>
   </div>
   <% end %>  
