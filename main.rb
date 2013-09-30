@@ -1,12 +1,9 @@
-#!/usr/bin/ruby
 require 'rubygems'
 require 'json'
 require 'net/http'
 require 'yaml'
 require 'sinatra'
 require 'sinatra/flash'
-
-zip = "31324"
 
 get '/' do    
     erb :index  
