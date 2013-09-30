@@ -4,6 +4,7 @@ require 'net/http'
 require 'yaml'
 require 'sinatra'
 require 'sinatra/flash'
+require	'./env'
 
 get '/' do    
     erb :index  
@@ -11,8 +12,9 @@ end
 
 post '/' do
 	zip 			= params[:zip].to_s
-	CONFIG 		= YAML.load_file("config.yml")
-	key 	 		= CONFIG['petsearch']['key']
+	key				= ENV['key']
+	# CONFIG 		= YAML.load_file("config.yml")
+	# key 	 		= CONFIG['petsearch']['key']
 	url		 		= "http://api.petfinder.com/pet.find?key=#{key}&format=json&location=#{zip}"
 	resp   		= Net::HTTP.get_response(URI.parse(url))
 	resp_text = resp.body
