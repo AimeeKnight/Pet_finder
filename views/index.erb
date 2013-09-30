@@ -1,0 +1,28 @@
+<section id="add">  
+  <form action="/" method="post">  
+    <input name="zip" placeholder="enter zip code"></input>  
+    <input type="submit" value="Search Pets">  
+  </form>  
+</section>  
+
+<% if @pets %>
+  <% @pets.each do |num| %>  
+    <article>  
+      <p>Name: <span><%= num["name"]["$t"] %></span></p>  
+      <p>Type: <span><%= num["animal"]["$t"] %></span></p>  
+      <p>Sex: <span><%= num["sex"]["$t"] %></span></p>
+      <p>Age: <span><%= num["age"]["$t"] %></span></p>
+      <img src="<%= num["media"]["photos"]["photo"][0]["$t"] %>"></img>
+      <p>Contact <span><%= num["contact"]["phone"]["$t"] %></span></p>
+    </article>  
+  <% end %>  
+<% end %>
+
+<!--   @obj["petfinder"]["pets"]["pet"].each do |num| 
+    @name     = num["name"]["$t"]
+    @animal   = num["animal"]["$t"]
+    @sex      = num["sex"]["$t"]
+    @age      = num["age"]["$t"]
+    @media    = num["media"]["photos"]["photo"][0]["$t"]
+    @contact  = num["contact"]["phone"]["$t"]
+  end -->
