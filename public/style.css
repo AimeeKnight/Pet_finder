@@ -5,14 +5,11 @@ section {
 .img {
 	height: 200px;
 	width: 200px;
-	border-radius: 5px;
-	border: 3px solid black;
 	overflow: hidden;
 }
 
 .pet {
 	padding: 10px;
-	border-top: 3px solid black;
 }
 
 article span{
