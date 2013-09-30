@@ -4,7 +4,7 @@ require 'net/http'
 require 'yaml'
 require 'sinatra'
 require 'sinatra/flash'
-require	'./env'
+require './env' if File.exists?('env.rb')
 
 get '/' do    
     erb :index  
