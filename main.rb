@@ -27,5 +27,5 @@ post '/' do
 end
 
 def valid_zip zip
-	zip.length == 5 && zip =~ /^\d+$/
+	zip =~ /^\d{5}$/
 end
