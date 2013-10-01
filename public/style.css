@@ -12,6 +12,7 @@ section {
 }
 article {
 	padding: 0 10px; 
+	overflow: hidden;
 }
 article span {
 	font-weight: normal;

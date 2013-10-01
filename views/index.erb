@@ -20,11 +20,19 @@
         <h4>SEX: &emsp;<span><%= num["sex"]["$t"] %></span></h4>
         <h4>AGE: &emsp;<span><%= num["age"]["$t"] %></span></h4>
         <h4>SIZE: &emsp;<span><%= num["size"]["$t"] %></span></h4>
-        <h4>ADDRESS: &emsp;
-            <span><%= num["contact"]["address1"]["$t"] %>            <%= num["contact"]["address2"]["$t"] %>
-              <%= num["contact"]["city"]["$t"] %>, 
-              <%= num["contact"]["state"]["$t"] %></span></h4>
-        <h4>PHONE: &emsp;<span><%= num["contact"]["phone"]["$t"] %></span></h4>
+        <% if num["contact"]["address1"]["$t"] %> 
+          <h4>ADDRESS: &emsp;
+            <span><%= num["contact"]["address1"]["$t"] %>            
+                  <%= num["contact"]["address2"]["$t"] %>
+                  <%= num["contact"]["city"]["$t"] %>, 
+                  <%= num["contact"]["state"]["$t"] %></span>
+          </h4>
+        <% end %>  
+        <% if num["contact"]["phone"]["$t"] %>
+          <h4>PHONE: &emsp;
+            <span><%= num["contact"]["phone"]["$t"] %></span>
+          </h4>
+        <% end %>
       </article>
     </div>
     <% end %>  
