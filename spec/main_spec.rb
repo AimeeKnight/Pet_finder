@@ -10,12 +10,17 @@ def app
 	Sinatra::Application
 end
 
-describe "Index page" do
+describe "Main" do
 	include Rack::Test::Methods
 
 	it "should load the home page" do
 		get '/'
 		last_response.should be_ok
+	end
+
+	it "should receive zip code key within the params hash" do
+		post '/'
+		last_response.body.include?("zip")
 	end
 end
 

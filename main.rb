@@ -11,21 +11,26 @@ get '/' do
 end  
 
 post '/' do
-	zip 			= params[:zip]
-	if valid_zip zip
-		key				= ENV['key']
-		url		 		= "http://api.petfinder.com/pet.find?key=#{key}&format=json&location=#{zip}"
-		resp   		= Net::HTTP.get_response(URI.parse(url))
-		resp_text = resp.body
-		obj 			= JSON.parse(resp_text)
-		@pets     = obj["petfinder"]["pets"]["pet"]
+	@zip = params[:zip]
+	@key				= ENV['key']
+	@url		 		= "http://api.petfinder.com/pet.find?key=#{@key}&format=json&location=#{@zip}"
+	@resp   		= Net::HTTP.get_response(URI.parse(@url))
+	@resp_text = @resp.body
+	@obj 			= JSON.parse(@resp_text)
+	# puts obj
+
+	if valid_zip @zip
+		@pets     = @obj["petfinder"]["pets"]["pet"]
 		erb :index
 	else
-		flash.now[:error] = "Please enter a 5 digit zip code."
+		flash.now[:error] = "Please enter a valid 5 digit zip code."
 		erb :index
 	end
 end
 
 def valid_zip zip
-	zip =~ /^\d{5}$/
+	zip =~ /^\d{5}$/ && @obj["petfinder"]["header"]["status"]["message"]["$t"] != "invalid_location"
+end
+
+def valid_response
 end
