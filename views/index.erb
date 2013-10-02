@@ -11,10 +11,12 @@
   <% if @pets %>
     <% @pets.each do |num| %>  
     <div class="pet well">
-      <article>  
-        <div class="img">
-          <img src="<%= num["media"]["photos"]["photo"][0]["$t"] %>" class="img-rounded"></img>
-        </div>
+      <article>
+        <% if num["media"]["photos"] %>   
+          <div class="img">
+            <img src="<%= num["media"]["photos"]["photo"][0]["$t"] %>" class="img-rounded"></img>
+          </div>
+        <% end %> 
         <h4>NAME: &emsp;<span><%= num["name"]["$t"] %></span></h4>  
         <h4>ANIMAL: &emsp;<span><%= num["animal"]["$t"] %></span></h4>  
         <h4>SEX: &emsp;<span><%= num["sex"]["$t"] %></span></h4>
