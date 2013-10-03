@@ -1,15 +1,12 @@
+/********** MAIN **********/
+.heart {
+	color: #db3498; 
+}
+/********** FORM **********/
 section {
 	margin: 15px 0 50px 0;
 }
-.img {
-	height: 200px;
-	width: 200px;
-	overflow: hidden;
-	border-radius: 5px;
-}
-.pet {
-	padding: 10px;
-}
+/********** RESULTS **********/
 article {
 	padding: 0 10px; 
 	overflow: hidden;
@@ -22,12 +19,18 @@ article .img {
 	float: right;
 	clear: left;
 }
+.img {
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.pet {
+	padding: 10px;
+}
 .well {
 	border-top: 3px solid #3498db;
 }
 .well:nth-child(odd){
 	border-top: 3px solid #db3498;
-}
-.heart {
-	color: #db3498; 
 }
