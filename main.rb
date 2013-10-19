@@ -3,7 +3,6 @@ require 'json'
 require 'net/http'
 require 'sinatra'
 require 'sinatra/flash'
-require 'newrelic_rpm'
 require './env' if File.exists?('env.rb')
 enable :sessions
 
